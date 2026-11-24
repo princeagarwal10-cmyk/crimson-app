@@ -1,0 +1,81 @@
+import '../domain/catalogue_models.dart';
+
+final sampleCatalogueState = CatalogueState(
+  updatedAt: DateTime.now().toIso8601String(),
+  brands: const ['Crimson'],
+  categories: const [
+    CategoryDraft(
+      name: 'Cabinet Handles',
+      subcategories: ['Welset', 'Monza'],
+      isPublished: true,
+      subcategoryPublished: {'Welset': true, 'Monza': true},
+    ),
+    CategoryDraft(
+      name: 'Concealed Handle',
+      subcategories: ['Aditya'],
+      isPublished: true,
+      subcategoryPublished: {'Aditya': true},
+    ),
+    CategoryDraft(
+      name: 'Key Stan',
+      subcategories: ['Aditya'],
+      isPublished: true,
+      subcategoryPublished: {'Aditya': true},
+    ),
+  ],
+  products: [
+    ProductDraft(
+      id: 'sample-w-astha',
+      name: 'W Astha',
+      sku: 'WA-001',
+      category: 'Cabinet Handles',
+      subcategory: 'Welset',
+      brand: 'Crimson',
+      notes: 'Grouped product with finish by size price matrix.',
+      isPublished: true,
+      variations: const [
+        VariationDraft(size: 'KNOB', finish: 'Matt Black', price: '195'),
+        VariationDraft(size: '96MM', finish: 'Matt Black', price: '300'),
+        VariationDraft(size: '160MM', finish: 'Matt Black', price: '495'),
+        VariationDraft(size: '224MM', finish: 'Matt Black', price: '710'),
+        VariationDraft(size: '288MM', finish: 'Matt Black', price: '885'),
+        VariationDraft(size: 'KNOB', finish: 'Cola Choco', price: '195'),
+        VariationDraft(size: '96MM', finish: 'Cola Choco', price: '300'),
+        VariationDraft(size: '160MM', finish: 'Cola Choco', price: '495'),
+        VariationDraft(size: '224MM', finish: 'Cola Choco', price: '710'),
+        VariationDraft(size: '288MM', finish: 'Cola Choco', price: '885'),
+      ],
+    ),
+    ProductDraft(
+      id: 'sample-5310-duba',
+      name: '5310 Duba Handle',
+      sku: '5310',
+      category: 'Concealed Handle',
+      subcategory: 'Aditya',
+      brand: 'Crimson',
+      notes: 'Imported from group-name rows while keeping size manual.',
+      isPublished: true,
+      variations: const [
+        VariationDraft(size: '10"', finish: 'Black', price: '100'),
+        VariationDraft(size: '12"', finish: 'Black', price: '120'),
+        VariationDraft(size: '4"', finish: 'R/G', price: '130'),
+        VariationDraft(size: '8"', finish: 'R/G', price: '140'),
+      ],
+    ),
+    ProductDraft(
+      id: 'sample-rajwadi-key-stan',
+      name: 'Rajwadi Key Stan',
+      sku: 'RKS',
+      category: 'Key Stan',
+      subcategory: 'Aditya',
+      brand: 'Crimson',
+      notes: 'Blank size is allowed for products that only vary by finish.',
+      isPublished: true,
+      variations: const [
+        VariationDraft(finish: 'B.A', price: '0'),
+        VariationDraft(finish: 'Black', price: '0'),
+        VariationDraft(finish: 'R/G', price: '0'),
+      ],
+    ),
+  ],
+);
